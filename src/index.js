@@ -19,13 +19,8 @@ client.on('presenceUpdate', (oldPresence, newPresence) => {
   console.log('Presence updated!');
   console.log('Old presence:', oldPresence);
   console.log('New presence:', newPresence);
-  if (newPresence.user.id !== process.env.RAT_USER_ID) return;
 
-  try {
-    if (oldPresence.status === newPresence.status) return;
-  } catch (e) {
-    console.error(e);
-  }
+  if (newPresence.user.id !== process.env.RAT_USER_ID) return;
 
   if (newPresence.status !== 'online') return;
 
